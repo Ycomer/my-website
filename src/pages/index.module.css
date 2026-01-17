@@ -1,0 +1,463 @@
+/**
+ * 首页样式 - 双主题支持
+ */
+
+/* ==================== Hero 区域 ==================== */
+
+.heroBanner {
+  position: relative;
+  padding: 8rem 0 6rem;
+  text-align: center;
+  overflow: hidden;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 亮色模式 Hero 背景 */
+:global([data-theme='light']) .heroBanner {
+  background: radial-gradient(ellipse at bottom, #FEF3C7 0%, #FAFAF9 100%);
+}
+
+/* 暗色模式 Hero 背景 */
+:global([data-theme='dark']) .heroBanner {
+  background: radial-gradient(ellipse at bottom, #1a2540 0%, #0a0e17 100%);
+}
+
+/* 亮色模式装饰 */
+:global([data-theme='light']) .heroBanner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(217, 119, 6, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.05) 0%, transparent 70%);
+  animation: float 20s ease-in-out infinite;
+}
+
+/* 暗色模式星星背景 */
+:global([data-theme='dark']) .heroBanner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, #ffffff, transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 90px 40px, #ffffff, transparent),
+    radial-gradient(2px 2px at 160px 120px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1px 1px at 230px 80px, #ffffff, transparent),
+    radial-gradient(2px 2px at 300px 150px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 350px 50px, #ffffff, transparent),
+    radial-gradient(2px 2px at 420px 180px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 500px 90px, #ffffff, transparent),
+    radial-gradient(2px 2px at 580px 130px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 650px 200px, #ffffff, transparent),
+    radial-gradient(2px 2px at 720px 60px, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1px 1px at 800px 170px, #ffffff, transparent),
+    radial-gradient(2px 2px at 880px 100px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 950px 220px, #ffffff, transparent);
+  background-size: 1000px 250px;
+  animation: twinkle 8s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+:global([data-theme='dark']) .heroBanner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(1px 1px at 50px 100px, #F0B840, transparent),
+    radial-gradient(1px 1px at 150px 200px, rgba(240,184,64,0.6), transparent),
+    radial-gradient(2px 2px at 280px 50px, rgba(240,184,64,0.4), transparent),
+    radial-gradient(1px 1px at 400px 150px, #F0B840, transparent),
+    radial-gradient(1px 1px at 550px 80px, rgba(240,184,64,0.5), transparent),
+    radial-gradient(2px 2px at 700px 200px, rgba(240,184,64,0.3), transparent),
+    radial-gradient(1px 1px at 850px 120px, #F0B840, transparent);
+  background-size: 900px 250px;
+  animation: twinkle 12s ease-in-out infinite reverse;
+  opacity: 0.4;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Hero 内容 */
+.heroContent {
+  position: relative;
+  z-index: 10;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* 标题样式 */
+.heroTitle {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+:global([data-theme='light']) .heroTitle {
+  color: #1C1917;
+  text-shadow: 0 0 40px rgba(217, 119, 6, 0.2);
+}
+
+:global([data-theme='dark']) .heroTitle {
+  color: #FFFFFF;
+  text-shadow: 0 0 40px rgba(240, 184, 64, 0.3);
+}
+
+.heroTitle span {
+  text-shadow: 0 0 60px currentColor;
+}
+
+:global([data-theme='light']) .heroTitle span {
+  color: #D97706;
+}
+
+:global([data-theme='dark']) .heroTitle span {
+  color: #F0B840;
+}
+
+/* 副标题 */
+.heroSubtitle {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+:global([data-theme='light']) .heroSubtitle {
+  color: #57534E;
+}
+
+:global([data-theme='dark']) .heroSubtitle {
+  color: #A0B0C8;
+}
+
+/* 描述文字 */
+.heroDescription {
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+:global([data-theme='light']) .heroDescription {
+  color: #78716C;
+}
+
+:global([data-theme='dark']) .heroDescription {
+  color: #708090;
+}
+
+/* 按钮组 */
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.primaryButton {
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+:global([data-theme='light']) .primaryButton {
+  background: linear-gradient(135deg, #D97706 0%, #F59E0B 100%);
+  color: #FFFFFF !important;
+}
+
+:global([data-theme='dark']) .primaryButton {
+  background: linear-gradient(135deg, #E8A838 0%, #F0B840 100%);
+  color: #0A0E17 !important;
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+:global([data-theme='light']) .primaryButton:hover {
+  box-shadow: 0 10px 40px rgba(217, 119, 6, 0.3);
+  color: #FFFFFF !important;
+}
+
+:global([data-theme='dark']) .primaryButton:hover {
+  box-shadow: 0 10px 40px rgba(240, 184, 64, 0.3);
+  color: #0A0E17 !important;
+}
+
+.secondaryButton {
+  background: transparent;
+  font-weight: 500;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+:global([data-theme='light']) .secondaryButton {
+  border: 2px solid rgba(217, 119, 6, 0.5);
+  color: #D97706 !important;
+}
+
+:global([data-theme='dark']) .secondaryButton {
+  border: 2px solid rgba(240, 184, 64, 0.5);
+  color: #F0B840 !important;
+}
+
+.secondaryButton:hover {
+  text-decoration: none;
+}
+
+:global([data-theme='light']) .secondaryButton:hover {
+  background: rgba(217, 119, 6, 0.1);
+  border-color: #D97706;
+  color: #D97706 !important;
+}
+
+:global([data-theme='dark']) .secondaryButton:hover {
+  background: rgba(240, 184, 64, 0.1);
+  border-color: #F0B840;
+  color: #F0B840 !important;
+}
+
+/* ==================== 特色区域 ==================== */
+
+.features {
+  padding: 5rem 0;
+}
+
+:global([data-theme='light']) .features {
+  background: linear-gradient(180deg, #FAFAF9 0%, #F5F5F4 100%);
+}
+
+:global([data-theme='dark']) .features {
+  background: linear-gradient(180deg, #0A0E17 0%, #0D1220 100%);
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+:global([data-theme='light']) .sectionTitle {
+  color: #1C1917;
+}
+
+:global([data-theme='dark']) .sectionTitle {
+  color: #FFFFFF;
+}
+
+.sectionSubtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 4rem;
+}
+
+:global([data-theme='light']) .sectionSubtitle {
+  color: #78716C;
+}
+
+:global([data-theme='dark']) .sectionSubtitle {
+  color: #708090;
+}
+
+/* 特色卡片 */
+.featureCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.featureCard {
+  border-radius: 16px;
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+:global([data-theme='light']) .featureCard {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+:global([data-theme='dark']) .featureCard {
+  background: linear-gradient(145deg, rgba(15, 21, 37, 0.8) 0%, rgba(10, 14, 23, 0.9) 100%);
+  border: 1px solid rgba(240, 184, 64, 0.1);
+}
+
+.featureCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+:global([data-theme='light']) .featureCard::before {
+  background: linear-gradient(90deg, transparent, #D97706, transparent);
+}
+
+:global([data-theme='dark']) .featureCard::before {
+  background: linear-gradient(90deg, transparent, #F0B840, transparent);
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+}
+
+:global([data-theme='light']) .featureCard:hover {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  border-color: rgba(217, 119, 6, 0.3);
+}
+
+:global([data-theme='dark']) .featureCard:hover {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  border-color: rgba(240, 184, 64, 0.3);
+}
+
+.featureCard:hover::before {
+  opacity: 1;
+}
+
+.featureIcon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.featureTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+:global([data-theme='light']) .featureTitle {
+  color: #1C1917;
+}
+
+:global([data-theme='dark']) .featureTitle {
+  color: #FFFFFF;
+}
+
+.featureDescription {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+:global([data-theme='light']) .featureDescription {
+  color: #57534E;
+}
+
+:global([data-theme='dark']) .featureDescription {
+  color: #8090A8;
+}
+
+.featureLink {
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: gap 0.3s ease;
+}
+
+:global([data-theme='light']) .featureLink {
+  color: #D97706;
+}
+
+:global([data-theme='dark']) .featureLink {
+  color: #F0B840;
+}
+
+.featureLink:hover {
+  gap: 0.8rem;
+  text-decoration: none;
+}
+
+:global([data-theme='light']) .featureLink:hover {
+  color: #B45309;
+}
+
+:global([data-theme='dark']) .featureLink:hover {
+  color: #F4C860;
+}
+
+/* ==================== 响应式设计 ==================== */
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 4rem 1rem;
+    min-height: 70vh;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.2rem;
+  }
+
+  .heroDescription {
+    font-size: 1rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .featureCards {
+    grid-template-columns: 1fr;
+  }
+}

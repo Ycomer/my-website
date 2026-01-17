@@ -1,0 +1,24 @@
+思考:
+  label: 思考
+  permalink: /thinking
+  description: 投资决策、认知升级、复盘反思
+
+crypto:
+  label: Crypto
+  permalink: /crypto
+  description: 加密货币、链上分析、DeFi
+
+stock:
+  label: 美股
+  permalink: /stock
+  description: 美股市场、量化分析、投资策略
+
+tools:
+  label: 工具
+  permalink: /tools
+  description: 自研工具、效率提升、开发实践
+
+life:
+  label: 生活
+  permalink: /life
+  description: 生活感悟、随笔杂谈
