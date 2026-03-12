@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Fankus',
-  tagline: '在混沌中寻找秩序',
+  tagline: '混沌中寻找秩序',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -58,6 +58,10 @@ const config: Config = {
         theme: {
           customCss: './src/css/custom.css',
         },
+        gtag: {
+          trackingID: 'G-3P7T2X17Q8', // 替换为你的 GA4 Measurement ID
+          anonymizeIP: true, // 匿名化 IP 地址以符合隐私要求
+        },
       } satisfies Preset.Options,
     ],
   ],
@@ -76,11 +80,11 @@ const config: Config = {
       },
       items: [
         {to: '/blog', label: 'Blog', position: 'left'},
-        {
-          href: 'https://github.com/ycomer',
-          label: 'GitHub',
-          position: 'right',
-        },
+        // {
+        //   href: 'https://github.com/ycomer',
+        //   label: 'GitHub',
+        //   position: 'right',
+        // },
       ],
     },
     footer: {
@@ -102,10 +106,10 @@ const config: Config = {
               label: 'X (Twitter)',
               href: 'https://x.com/FankusAI',
             },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/ycomer',
-            },
+            // {
+            //   label: 'GitHub',
+            //   href: 'https://github.com/ycomer',
+            // },
           ],
         },
       ],

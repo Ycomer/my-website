@@ -34,14 +34,10 @@ function HomepageHeader() {
     <header className={styles.heroBanner}>
       <div className={styles.heroContent}>
         <h1 className={styles.heroTitle}>
-          在混沌中寻找<span>秩序</span>
+          混沌中寻找<span>秩序</span> · 与AI共舞
         </h1>
-        <p className={styles.heroSubtitle}>
-          用代码构建工具，用文字沉淀思考
-        </p>
         <p className={styles.heroDescription}>
-          这里是 Fankus 的数字空间。我在币圈和美股市场中探索，打造追踪聪明钱的工具，
-          记录投资决策的思考与复盘，分享在不确定性中寻找确定性的旅程。
+          这里是 Fankus 的未来空间。在投资市场探索，构建创意产品，记录投资决策的思考与复盘，构建反脆弱人生。
         </p>
         <div className={styles.buttons}>
           <Link className={styles.primaryButton} to="/blog">
@@ -94,7 +90,7 @@ function HomepageFeatures() {
 export default function Home(): ReactNode {
   return (
     <Layout
-      title="首页"
+      title="Home"
       description="Fankus 的数字空间 - 投资思考、链上工具、市场洞察">
       <HomepageHeader />
       <main>
