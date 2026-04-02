@@ -59,7 +59,7 @@ const config: Config = {
           customCss: './src/css/custom.css',
         },
         gtag: {
-          trackingID: 'G-3P7T2X17Q8', // 替换为你的 GA4 Measurement ID
+          trackingID: 'G-3R61QHLSM6', // 替换为你的 GA4 Measurement ID
           anonymizeIP: true, // 匿名化 IP 地址以符合隐私要求
         },
       } satisfies Preset.Options,
