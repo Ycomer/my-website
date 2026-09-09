@@ -1,31 +1,33 @@
 import type {ReactNode} from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
+import LeadForm from '../components/LeadForm';
+import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
 
 // 特色卡片数据
 const features = [
   {
-    icon: '📝',
+    icon: '01',
     title: '思考与复盘',
     description: '记录投资决策的完整过程，从事件驱动到执行反馈。在市场的起伏中沉淀认知，让每一次经历都成为进化的养分。',
     link: '/blog',
     linkText: '阅读博客',
   },
   {
-    icon: '🔗',
-    title: '链上工具',
-    description: '追踪聪明钱的链上足迹，监控资金流动的方向与规模。在区块链的透明世界里，发现那些被忽视的信号。',
-    link: '/blog',
-    linkText: '敬请期待',
+    icon: '02',
+    title: 'SpeechAct · 言出法随',
+    description: '把一句话目标变成可验证的结果。正在寻找真实任务，与首批用户一起验证 AI 能可靠完成哪些工作。',
+    link: 'https://speechact.xyz/?utm_source=ycomer&utm_medium=project&utm_campaign=founding-pilot',
+    linkText: '提交一个真实任务',
   },
   {
-    icon: '📊',
-    title: '市场洞察',
-    description: '美股市场的量化工具与分析框架，从数据中挖掘确定性。用代码武装自己，在信息的海洋中找到航向。',
-    link: '/blog',
-    linkText: '敬请期待',
+    icon: '03',
+    title: 'Silicon Self · 向内看',
+    description: '用七天记录，对照你说过的目标与真正做过的事。从一个小小的反馈循环，开始认识自己的模式。',
+    link: 'https://siliconself.xyz/?utm_source=ycomer&utm_medium=project&utm_campaign=seven-days',
+    linkText: '开始 7 天记录',
   },
 ];
 
@@ -33,18 +35,19 @@ function HomepageHeader() {
   return (
     <header className={styles.heroBanner}>
       <div className={styles.heroContent}>
+        <p className={styles.eyebrow}>FANKUS / FIELD NOTES & EXPERIMENTS</p>
         <h1 className={styles.heroTitle}>
-          混沌中寻找<span>秩序</span> · 与AI共舞
+          混沌中寻找<span>秩序</span><br />把思考变成实验。
         </h1>
         <p className={styles.heroDescription}>
-          这里是 Fankus 的未来空间。在投资市场探索，构建创意产品，记录投资决策的思考与复盘，构建反脆弱人生。
+          我是 Fankus，记录投资决策，构建 AI 产品，也观察自己的行动。这里分享过程、证据，以及下一次会怎么做。
         </p>
         <div className={styles.buttons}>
-          <Link className={styles.primaryButton} to="/blog">
-            探索博客 →
+          <Link className={styles.primaryButton} to="#subscribe">
+            订阅构建笔记 →
           </Link>
           <Link className={styles.secondaryButton} to="/blog">
-            关于我
+            阅读最近的思考
           </Link>
         </div>
       </div>
@@ -74,9 +77,9 @@ function FeatureCard({icon, title, description, link, linkText}: {
 function HomepageFeatures() {
   return (
     <section className={styles.features}>
-      <h2 className={styles.sectionTitle}>探索方向</h2>
+      <h2 className={styles.sectionTitle}>你想一起探索什么？</h2>
       <p className={styles.sectionSubtitle}>
-        在数据的宇宙中，每一个信号都可能指向新的星辰
+        阅读思考，提交任务，或者开始一次与自己的对话。
       </p>
       <div className={styles.featureCards}>
         {features.map((feature, idx) => (
@@ -95,6 +98,17 @@ export default function Home(): ReactNode {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+        <section className={styles.newsletter}>
+          <div>
+            <p className={styles.eyebrow}>A LETTER FROM THE WORKBENCH</p>
+            <Heading as="h2" id="subscribe">让下一次相遇，<br />发生在你的收件箱。</Heading>
+            <p>按你选择的方向，分享新的实验、决策复盘与构建进展。计划每周一封，有值得分享的进展时再写。</p>
+            <p>订阅后即可打开《7 天产品验证清单》，把一个模糊想法变成可观察的实验。</p>
+            <Link to="/field-guide">先看看清单 →</Link>
+          </div>
+          <LeadForm site="ycomer" />
+        </section>
+        <section className={styles.about}><Heading as="h2" id="about">关于 Fankus</Heading><p>我在市场、产品与个人成长之间寻找反馈。这个网站记录正在进行的探索，SpeechAct 和 Silicon Self 是其中两个实验。你可以从一篇文章开始，也可以直接带着一个问题来找我。</p><a href="mailto:hello@ycomer.xyz">写信给我 →</a></section>
       </main>
     </Layout>
   );

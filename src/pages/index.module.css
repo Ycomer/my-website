@@ -140,7 +140,9 @@
   font-size: 4rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
+  line-height: 1.4;
+  text-wrap: balance;
 }
 
 :global([data-theme='light']) .heroTitle {
@@ -421,7 +423,9 @@
 }
 
 .featureIcon {
-  font-size: 3rem;
+  font-size: .85rem;
+  font-family: monospace;
+  color: var(--ifm-color-primary);
   margin-bottom: 1.5rem;
 }
 
@@ -484,6 +488,12 @@
 }
 
 /* ==================== 响应式设计 ==================== */
+.eyebrow{font-family:monospace;font-size:.72rem;letter-spacing:.17em;color:var(--ifm-color-primary);margin-bottom:1.5rem;line-height:1.8}
+.newsletter{max-width:1200px;margin:auto;padding:6rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;scroll-margin-top:6rem}
+.newsletter h2{font-size:clamp(1.8rem,3.2vw,2.7rem);line-height:1.45;letter-spacing:0;text-wrap:balance;margin:1rem 0 1.5rem}.newsletter p{line-height:1.9;max-width:36em}.about{max-width:850px;margin:0 auto;padding:2rem 2rem 6rem;scroll-margin-top:6rem}.about p{line-height:1.9}
+@media(max-width:760px){.newsletter{grid-template-columns:1fr;gap:1rem;padding:4rem 1.25rem}.about{padding-inline:1.25rem}}
+@media(max-width:480px){.heroContent{padding:0 .25rem}.heroTitle{font-size:2.15rem}.featureCards{padding:0 1.25rem}.featureCard{padding:1.75rem}.sectionTitle,.sectionSubtitle{padding-inline:1.25rem}.heroBanner{min-height:70dvh}.buttons{align-items:stretch}}
+@media(prefers-reduced-motion:reduce){.heroBanner::before,.heroContent::after{animation:none!important}}
 
 @media screen and (max-width: 996px) {
   .heroBanner {
