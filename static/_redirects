@@ -1,0 +1,16 @@
+# Retired personal site. Content lives on Fankus; preserve individual article URLs.
+/blog/hello-world https://fankus.me/journal/hello-world 301
+/blog/hello-world/ https://fankus.me/journal/hello-world 301
+/blog/antifragile-survival-strategy https://fankus.me/journal/antifragile-survival-strategy 301
+/blog/antifragile-survival-strategy/ https://fankus.me/journal/antifragile-survival-strategy 301
+/field-guide https://fankus.me/field-guide 301
+/field-guide/ https://fankus.me/field-guide 301
+/privacy https://fankus.me/privacy 301
+/privacy/ https://fankus.me/privacy 301
+/blog https://fankus.me/#/journal 301
+/markdown-page https://fankus.me/#/journal 301
+/sitemap.xml https://fankus.me/sitemap.xml 301
+/ https://fankus.me/ 301
+/blog/* https://fankus.me/#/journal 301
+/docs/* https://fankus.me/#/journal 301
+/* https://fankus.me/ 301
